@@ -1,24 +1,30 @@
 <template>
   <q-page class="home-page">
     <div class="q-container column items-center justify-center text-center full-height">
-      <!-- ✅ Logo with animation -->
-      <img ref="logo" alt="Quasar logo" src="~assets/quasar-logo-vertical.svg" class="logo-image" />
+      <!-- ✅ Professional Contact Logo -->
+      <img
+        ref="logo"
+        src="https://cdn-icons-png.flaticon.com/512/1250/1250615.png"
+        alt="Contact Management Icon"
+        class="logo-image"
+      />
 
       <!-- ✅ Heading -->
-      <div class="text-h4 text-white q-mt-md text-weight-bold">Welcome to Quasar Project</div>
+      <div class="text-h4 text-white q-mt-md text-weight-bold">Contact Management System</div>
 
       <!-- ✅ Subtext -->
-      <div class="text-subtitle2 text-grey-3 q-mt-sm">
-        Build blazing-fast Vue.js apps with elegant UI
+      <div class="text-subtitle2 text-grey-4 q-mt-sm">
+        Efficiently manage, edit & delete user contacts
       </div>
 
       <!-- ✅ CTA Button -->
       <q-btn
-        label="Get Started"
+        label="Manage Contacts"
         color="primary"
         class="q-mt-lg"
         glossy
         unelevated
+        icon="contacts"
         @click="goToNextPage"
       />
     </div>
@@ -34,7 +40,7 @@ const logo = ref(null)
 const router = useRouter()
 
 onMounted(() => {
-  // 🔄 GSAP animation on logo
+  // 🔄 Animate logo on load
   gsap.from(logo.value, {
     opacity: 0,
     scale: 0.8,
@@ -43,9 +49,9 @@ onMounted(() => {
   })
 })
 
-// 🔁 Navigate on button click
+// 🔁 Go to contact list page
 const goToNextPage = () => {
-  router.push('/register') // Change this route as needed
+  router.push('/contacts') // ✅ রাউট বদলাও তোমার অ্যাপ অনুযায়ী
 }
 </script>
 
@@ -56,9 +62,9 @@ const goToNextPage = () => {
 }
 
 .logo-image {
-  width: 160px;
-  height: 160px;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+  width: 150px;
+  height: 150px;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
 }
 
 @keyframes bgFade {
